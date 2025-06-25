@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Archivos - Reportes guardados</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="archivos.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+</head>
+<body class="bg-light">
+
+  <!-- Header -->
+  <header class="text-white py-3 mb-4">                       
+    <div class="container d-flex justify-content-between align-items-center">
+      <img src="Imagen2.png" class="logo-gobierno" alt="Icono" />
+      <span>Usuario: <strong id="nombre-usuario"></strong></span>      
+    </div>
+  </header>
+
+  <!-- Navegación Premium -->
+  <div class="row mt-4">
+    <div class="col-md-12">
+      <ul class="nav nav-pills justify-content-center nav-pills-premium">
+        <li class="nav-item">
+          <a class="nav-link" id="dashboard-tab" data-bs-toggle="pill" href="dashboard.html" role="tab" aria-controls="dashboard" aria-selected="false">
+            <i class="fa fa-home"></i> Inicio
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="reportes-tab" data-bs-toggle="pill" href="reportes.html" role="tab" aria-controls="reportes" aria-selected="false">
+            <i class="fa fa-file-alt"></i> Reportes del día
+          </a>
+        </li>                                                             
+        <li class="nav-item">
+          <a class="nav-link" id="archivos-tab" data-bs-toggle="pill" href="archivos.html" role="tab" aria-controls="archivos" aria-selected="false">
+            <i class="fa fa-folder"></i> Historial de incidencias 
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="inventario-tab" data-bs-toggle="pill" href="Inventario.html" role="tab" aria-controls="inventario" aria-selected="false">
+            <i class="fa fa-boxes"></i> Inventario
+          </a>
+        </li>
+           </li>
+           <li class="nav-item">
+            <a class="nav-link" id="encuesta" data-bs-toggle="pill" href="Encuesta.html" role="tab" aria-controls="inventario" aria-selected="false">
+           <i class="fas fa-smile "></i>Encuesta de satisfacción
+            </a>
+          </li>
+      <li class="nav-item">
+        <a class="nav-link" id="cerrar-sesion-tab" data-bs-toggle="pill" href="login.html" role="tab"  aria-controls="cerrar-sesion" aria-selected="false">
+          <i class="fa fa-sign-out-alt"></i> Cerrar sesión
+        </a>
+      </li>
+
+      </ul>
+    </div>
+  </div>
+
+    <div class="container py-5">
+      <h2 class="text-center mb-4">Reportes guardados por usuario</h2>
+
+<!-- Filtros -->
+<div class="container mb-4">
+  <div class="row g-2 align-items-center">
+
+    <!-- Fechas -->
+    <div class="col-12 col-md-auto d-flex gap-2">
+      <input type="date" id="filtroFecha" class="form-control" />
+      <span class="align-self-center">hasta</span>
+      <input type="date" id="filtroFecha2" class="form-control" />
+    </div>
+
+    <!-- Horas -->
+    <div class="col-12 col-md-auto d-flex gap-2">
+      <input type="time" id="filtroHoraInicio" class="form-control" step="1" />
+      <span class="align-self-center">hasta</span>
+      <input type="time" id="filtroHoraFin" class="form-control" step="1" />
+    </div>
+
+    <!-- Usuario -->
+    <div class="col-12 col-md-auto d-flex gap-2">
+      <select id="filtroUsuario" class="form-control">
+        <option value="all">-- Todos --</option>
+      </select>
+    </div>
+
+    <!-- Botón de reinicio -->
+    <div class="col-12 col-md-auto d-flex">
+      <button id="btnReiniciarFiltros" class="btn btn-outline-secondary w-100">
+        Reiniciar filtros
+      </button>
+    </div>
+
+  </div>
+</div>
+                                                          
+    <!-- Tabla de Reportes -->
+<div class="card shadow mt-4">
+  <div class="card-body">
+    <h4 class="card-title text-center text-dark">Reportes del día</h4>
+    
+    <div class="table-responsive table-container-premium">
+      <table id="tablaR" class="table table-striped table-hover table-premium">
+        <thead>
+          <tr>
+            <th>Fecha</th>
+            <th>Hora</th>
+            <th>Canal</th>
+            <th>Estación</th>
+            <th>Tipo</th>
+            <th>Reporte</th>
+            <th>Comentario</th>
+            <th>Urgencia</th>
+            <th>Solución</th> 
+            <th>Usuario</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Los datos de la tabla se insertarán aquí dinámicamente -->
+        </tbody>
+      </table>
+    </div>
+     <!-- Botones de descarga -->
+          <div class="d-flex justify-content-center mt-3">
+            <button class="btn btn-burdeo me-3" id="descargarPDFA">
+              <i class="fa fa-file-pdf"></i> Descargar PDF
+            </button>
+            <button class="btn btn-dorado me-3" id="descargarExcel">
+              <i class="fa fa-file-excel"></i> Descargar Excel
+            </button>
+          </div>
+  </div>
+</div>
+  
+        </div>
+
+  <!-- Footer -->
+  <footer class="text-white mt-5 py-3">
+    <div class="container text-center">
+      <p class="mb-1">&copy; 2025 Sistema de reportes</p>
+      <p class="text-dorado mb-0">Desarrollado </p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <!--<script src="script.js"></script> -->
+  <script src="auth.js"></script>
+  <script src="historial.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.4/xlsx.full.min.js"></script>
+  <script src="Excel.js"></script>
+  <script src="PDF.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.5/xlsx.full.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.plot.ly/plotly-2.10.0.min.js"></script>
+
+  <!-- Canvases ocultos -->
+  <canvas id="graficaEstaciones" width="400" height="300" style="display:none;"></canvas>
+  <canvas id="graficaTipos" width="400" height="300" style="display:none;"></canvas>
+
+  <!-- Limitar acceso a ciertos usuarios -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const nombreUsuario = localStorage.getItem('usuario');
+    
+      if (nombreUsuario && nombreUsuario.startsWith("supervisor_")) {
+        alert("Acceso no autorizado. Serás redirigido al menú principal.");
+        window.location.href = "dashboard.html"; // Cambia esto por tu página principal
+      }
+    });
+    </script>
+  
+</body>
+</html>

@@ -1,0 +1,219 @@
+body {
+  background-color: #f8f9fa;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.card {
+  margin-bottom: 30px;
+  border-radius: 10px; /* Bordes redondeados para dar el estilo premium */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+.card-title {
+  font-size: 1.5rem;
+  color: #495057;
+  text-align: center;
+  font-weight: 600; /* Negrita para los títulos */
+}
+
+/* Contenedor premium con scroll personalizado */
+
+/* Tablas */
+/* Contenedor con scroll premium */
+.table-container-premium {
+  max-height: 400px;
+  overflow-y: auto;
+  overflow-x: auto;
+  border-radius: 10px;
+  border: 1px solid #dee2e6;
+  padding: 10px;
+  background-color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* Estilo de tabla premium */
+.table-premium th {
+  background-color: #B38E5D;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.table-premium td {
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.table-premium {
+  border-collapse: separate;
+  border-spacing: 0;
+  min-width: 1000px;
+}
+
+/* Scrollbar premium */
+.table-container-premium::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+.table-container-premium::-webkit-scrollbar-thumb {
+  background-color: #B38E5D;
+  border-radius: 4px;
+}
+.table-container-premium::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
+
+
+button {
+  font-size: 1rem;
+  padding: 10px 20px;
+  border-radius: 5px; /* Bordes redondeados */
+  font-weight: 600; /* Negrita para los botones */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button i {
+  margin-right: 8px;
+}
+
+button:hover {
+  opacity: 0.8; /* Efecto de opacidad al pasar el mouse */
+}
+
+button:focus {
+  box-shadow: 0 0 0 0.25rem rgba(179, 142, 93, 0.5); /* Resaltado del botón cuando es seleccionado */
+}
+.btn-burdeo {
+  background-color: #68182E;
+  color: white;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn-burdeo:hover {
+  background-color: #B38E5D;
+}
+
+.btn-dorado {
+  background-color: #B38E5D;
+  color: white;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn-dorado:hover {
+  background-color: #68182E;
+}
+
+
+button.btn-warning {
+  background-color: #ffc107;
+  border-color: #ffc107;
+  color: black;
+}
+
+button.btn-warning:hover {
+  background-color: #e0a800;
+  border-color: #d39e00;
+}
+
+.logo-gobierno {
+  width: 70% !important;
+  max-width: 300px !important;
+  height: auto !important;
+}
+
+/* Estilos del encabezado */
+header {
+  background-color:  #68182E; /* Fondo oscuro suave */
+  color: white;
+}
+
+header h1 {
+  font-weight: bold;
+}
+
+/* Navegación Premium */
+.nav-pills-premium {
+  background-color: #68182E; /* Fondo oscuro */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Sombra sutil para darle profundidad */
+}
+
+.nav-pills-premium .nav-link {
+  color: white; /* Color dorado por defecto */
+  font-weight: 600; /* Peso de fuente más grueso */
+  font-size: 1.1rem; /* Tamaño de fuente ligeramente más grande */
+  padding: 10px 20px; /* Espaciado más grande */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-pills-premium .nav-link i {
+  margin-right: 8px; /* Espacio entre el icono y el texto */
+}
+
+.nav-pills-premium .nav-link:hover {
+  background-color: #B38E5D; /* Fondo burdeos al pasar el mouse */
+  color: white; /* Texto blanco al hacer hover */
+}
+
+.nav-pills-premium .nav-link.active {
+  background-color: #B38E5D; /* Fondo dorado para el estado activo */
+  color: white; /* Texto blanco en estado activo */
+  border-radius: 10px; /* Bordes redondeados en el estado activo */
+}
+
+.nav-pills-premium .nav-link:focus {
+  box-shadow: 0 0 0 0.25rem rgba(179, 142, 93, 0.5); /* Resaltar cuando la pestaña es seleccionada */
+}
+
+/* Ajustes de los iconos */
+.nav-pills-premium .nav-link i {
+  color: white; /* Iconos en color dorado */
+  transition: color 0.3s ease;
+}
+
+.nav-pills-premium .nav-link:hover i {
+  color: white; /* Los iconos se ponen blancos al pasar el mouse */
+}
+
+/* Estilos para los filtros */
+.d-flex {
+  margin-bottom: 20px; /* Espacio entre los filtros y la tabla */
+}
+
+#filtroFecha, #filtroUsuario {
+  border-radius: 5px; /* Bordes redondeados en los filtros */
+  font-size: 1rem; /* Ajustar tamaño de texto */
+}
+
+#filtroUsuario {
+  color: #495057; /* Color del texto en el filtro */
+  background-color: #ffffff; /* Fondo blanco */
+}
+
+#filtroFecha {
+  background-color: #f1f3f5; /* Fondo más claro */
+}
+
+
+/* Footer */
+footer {
+  /*background-color:  #68182E;*/
+  font-size: 0.9rem;
+  border-top: 4px solid #B38E5D;
+  background-image: url(Imagen3.png);
+ background-size: cover;
+}
+/* Espaciado entre las filas */
+.row.mb-3 {
+  margin-bottom: 20px;
+}
+/* Label premium */
+.form-label {
+  font-weight: bold;
+  color: #495057;
+  font-size: 1.1rem;
+}

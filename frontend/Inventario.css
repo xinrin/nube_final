@@ -1,0 +1,252 @@
+/* Colores personalizados */
+.text-burdeo {
+  color: #68182E !important;
+}
+
+.text-dorado {
+  color: #B38E5D !important;
+}
+
+.btn-burdeo {
+  background-color: #68182E;
+  color: white;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn-burdeo:hover {
+  background-color: #B38E5D;
+}
+
+.btn-dorado {
+  background-color: #B38E5D;
+  color: white;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn-dorado:hover {
+  background-color: #68182E;
+}
+.imagen {
+  width: 100% !important;
+  max-width: 300px !important;
+  height: auto !important;
+  align-items: center;
+}
+
+
+/* Tablas */
+/* Contenedor con scroll premium */
+.table-container-premium {
+  max-height: 400px;
+  overflow-y: auto;
+  overflow-x: auto;
+  border-radius: 10px;
+  border: 1px solid #dee2e6;
+  padding: 10px;
+  background-color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* Estilo de tabla premium */
+.table-premium th {
+  background-color: #B38E5D;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.table-premium td {
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.table-premium {
+  border-collapse: separate;
+  border-spacing: 0;
+  min-width: 1000px;
+}
+
+/* Scrollbar premium */
+.table-container-premium::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+.table-container-premium::-webkit-scrollbar-thumb {
+  background-color: #B38E5D;
+  border-radius: 4px;
+}
+.table-container-premium::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
+
+/* Botones personalizados (si no los tienes definidos aún) */
+.btn-burdeo {
+  background-color: #68182E;
+  color: white;
+  border: none;
+}
+
+.btn-burdeo:hover {
+  background-color: #68182E;
+}
+
+.btn-dorado {
+  background-color: #B38E5D;
+  color: white;
+  border: none;
+}
+
+.btn-dorado:hover {
+  background-color: #9c774a;
+}
+
+
+/* Borde dorado en el header */
+.border-bottom-dorado {
+  border-bottom: 4px solid #B38E5D;
+}
+
+/* Estilos del encabezado */
+header {
+  background-color:  #68182E; /* Fondo oscuro suave */
+  color: white;
+}
+
+header h1 {
+  font-weight: bold;
+}
+/* Navegación Premium */
+.nav-pills-premium {
+  background-color: #68182E; /* Fondo oscuro */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Sombra sutil para darle profundidad */
+}
+
+.nav-pills-premium .nav-link {
+  color: white; /* Color dorado por defecto */
+  font-weight: 600; /* Peso de fuente más grueso */
+  font-size: 1.1rem; /* Tamaño de fuente ligeramente más grande */
+  padding: 10px 20px; /* Espaciado más grande */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-pills-premium .nav-link i {
+  margin-right: 8px; /* Espacio entre el icono y el texto */
+}
+
+.nav-pills-premium .nav-link:hover {
+  background-color: #B38E5D; /* Fondo burdeos al pasar el mouse */
+  color: white; /* Texto blanco al hacer hover */
+}
+
+.nav-pills-premium .nav-link.active {
+  background-color: #B38E5D; /* Fondo dorado para el estado activo */
+  color: white; /* Texto blanco en estado activo */
+  border-radius: 10px; /* Bordes redondeados en el estado activo */
+}
+
+.nav-pills-premium .nav-link:focus {
+  box-shadow: 0 0 0 0.25rem rgba(179, 142, 93, 0.5); /* Resaltar cuando la pestaña es seleccionada */
+}
+
+/* Ajustes de los iconos */
+.nav-pills-premium .nav-link i {
+  color: white; /* Iconos en color dorado */
+  transition: color 0.3s ease;
+}
+
+.nav-pills-premium .nav-link:hover i {
+  color: white; /* Los iconos se ponen blancos al pasar el mouse */
+}
+/* Footer */
+footer {
+  background-color:  #68182E;
+  font-size: 0.9rem;
+  border-top: 4px solid #B38E5D;
+}
+
+/* Formulario premium */
+.formulario-card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  padding: 20px;
+  min-width: 700px;
+}
+
+/* Selects con diseño premium */
+.form-select.premium-select {
+  border-radius: 8px;
+  border: 1px solid #B38E5D;
+  background-color: #f8f9fa;
+  color: #495057;
+  font-size: 1rem;
+  padding: 10px;
+  transition: all 0.3s ease;
+}
+
+.form-select.premium-select:focus {
+  border-color: #B38E5D;
+  box-shadow: 0 0 0 0.2rem rgba(179, 142, 93, 0.25);
+}
+
+/* Textarea premium */
+.form-control.premium-textarea {
+  border-radius: 8px;
+  border: 1px solid #B38E5D;
+  background-color: #f8f9fa;
+  color: #495057;
+  font-size: 1rem;
+  padding: 12px;
+  transition: all 0.3s ease;
+  min-height: 120px;
+}
+
+.form-control.premium-textarea:focus {
+  border-color: #B38E5D;
+  box-shadow: 0 0 0 0.2rem rgba(179, 142, 93, 0.25);
+}
+
+/* Botón premium */
+.btn-dorado {
+  background-color: #B38E5D;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.btn-dorado:hover {
+  background-color: #9c774a;
+  transform: translateY(-2px);
+}
+
+/* Label premium */
+.form-label {
+  font-weight: bold;
+  color: #495057;
+  font-size: 1.1rem;
+}
+
+/* Espaciado entre las filas */
+.row.mb-3 {
+  margin-bottom: 20px;
+}
+
+/* Fondo suave para el contenedor de formulario */
+.card-body {
+  padding: 20px;
+}
+
+.logo-gobierno {
+  width: 70% !important;
+  max-width: 300px !important;
+  height: auto !important;
+}

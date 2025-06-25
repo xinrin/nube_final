@@ -1,0 +1,116 @@
+/* Fondo general de la página */
+body {
+  background-color:#B38E5D ; /* Fondo claro que hace que resalten otros elementos */
+  font-family: 'Arial', sans-serif;
+  height: 100vh;
+  margin: 0;
+}
+
+/* Fondo de la sección de login */
+.container-fluid {
+  background-color: #f7f7f7; /* Fondo neutro para la página */
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bg-custom {
+  background: linear-gradient(135deg,#68182E 50%, #68182E 50%);
+  color: white;
+  padding: 30px;
+  border-radius: 15px 0 0 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* Fondo blanco para el formulario de login */
+.col-md-6.p-5.bg-white {
+  background-color: #ffffff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+}
+
+/* Títulos y textos */
+h2 {
+  font-family: 'Arial', sans-serif;
+  color: #9D2449;
+  font-weight: 700;
+  font-size: 36px;
+}
+
+h2 span {
+  color: #B38E5D;
+}
+
+h4 {
+  font-weight: 600;
+  font-size: 20px;
+  color: #9D2449;
+}
+
+/* Campos de entrada */
+input.form-control {
+  border: 1px solid #611232;
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+input.form-control:focus {
+  border-color: #B38E5D;
+  box-shadow: 0 0 10px rgba(178, 142, 93, 0.5);
+}
+
+/* Botón de inicio de sesión */
+.btn {
+  background-color: #611232;
+  color: white;
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color:#611232;
+}
+
+/* Diseño de la imagen a la derecha */
+.bg-custom img {
+  width: 60px;
+  margin-bottom: 20px;
+}
+
+.bg-custom h5 {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.bg-custom p {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+/* Animación en el contenedor principal */
+.container-fluid {
+  animation: fadeIn 1s ease-in-out;
+}
+.logo-gobierno {
+  width: 100% !important;
+  max-width: 1000px !important;
+  height: auto !important;
+}
+
+
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}

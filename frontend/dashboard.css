@@ -1,0 +1,87 @@
+/* poner footer hasta abajo */
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1; /* Esto hace que el contenido principal ocupe el espacio restante */
+}
+
+/* Fondo y tipografía general */
+body {
+  background-color: #f8f9fa;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Transición para tarjetas */
+.card {
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+/* Estilos del encabezado */
+header {
+  background-color: #68182E; /* negro suave */
+  color: white;
+}
+
+header h1 {
+  font-weight: bold;
+}
+
+/* Colores personalizados */
+.text-dorado {
+  color: #B38E5D;
+}
+
+.text-burdeo {
+  color: #68182E;
+}
+
+/* Botón dorado */
+.btn-dorado {
+  background-color: #B38E5D;
+  color: white;
+  border: none;
+}
+
+.btn-dorado:hover {
+  background-color: #a57e4c;
+  color: white;
+}
+
+/* Botón burdeo */
+.btn-burdeo {
+  background-color: #68182E;
+  color: white;
+  border: none;
+}
+
+.btn-burdeo:hover {
+  background-color: #68182E;
+  color: white;
+}
+.logo-gobierno {
+  width: 70% !important;
+  max-width: 300px !important;
+  height: auto !important;
+}
+
+/* Footer */
+footer {
+  /*background-color:  #68182E;*/
+  font-size: 0.9rem;
+  border-top: 4px solid #B38E5D;
+  background-image: url(Imagen3.png);
+ background-size: cover;
+}
+/* Borde dorado en la parte superior */
+.border-bottom-dorado {
+  border-bottom: 4px solid #B38E5D;
+}
