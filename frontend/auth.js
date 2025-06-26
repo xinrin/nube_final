@@ -5,8 +5,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const pagina = window.location.pathname;
 
   // Proteger páginas que no sean login
-  if (!usuario && !pagina.includes("login.html")) {
-    window.location.href = "login.html";
+  if (!usuario && !pagina.includes("Login.html")) {
+    window.location.href = "Login.html";
   }
 
   // Mostrar nombre en dashboard
@@ -27,23 +27,30 @@ if (document.getElementById('loginForm')) {
     const usuario = document.getElementById('username').value;
     const pass = document.getElementById('password').value;
 
-    fetch("LoginHandler.aspx/ValidarUsuario", {
+
+    // Llamada a la API de Flask
+    fetch("http://localhost:5000/user/validar_usuario", {  // Cambiar URL según tu configuración de Flask
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json"
+      },
       body: JSON.stringify({ usuario, contrasena: pass })
     })
       .then(res => res.json())
       .then(data => {
-        const respuesta = data.d;
+        console.log(data)
+        const respuesta = data.message;
         console.log("Respuesta del login:", respuesta);
 
-        if (respuesta.startsWith("ok|")) {
-          const partes = respuesta.split("|");
-          const jerarquia = partes[1];
+        if (respuesta === "ok") {
+          // Aquí asumiendo que la API de Flask retorna el valor de jerarquía
+          const jerarquia = data.jerarquia;
 
+          // Guardar en localStorage
           localStorage.setItem("usuario", usuario);
           localStorage.setItem("jerarquia", jerarquia);
 
+          // Redirigir al dashboard
           window.location.href = "dashboard.html";
         } else if (respuesta === "sesion_activa") {
           alert("Ya tienes una sesión activa. Por favor, cierra la otra sesión antes de continuar.");
@@ -61,7 +68,7 @@ if (document.getElementById('loginForm')) {
 function cerrarSesion() {
   localStorage.removeItem("usuario");
   localStorage.removeItem("jerarquia");
-  window.location.href = "login.html";
+  window.location.href = "Login.html";
 }
 
 // Botón o enlace de cerrar sesión
@@ -96,42 +103,45 @@ function ocultarElementoPorId(id) {
 }
 
 
-// ====== Cerrar sesión ======
+/// Llamada a la API de Flask para cerrar sesión
 function CerrarSesion() {
   const usuario = localStorage.getItem('usuario');
   const fecha = new Date().toISOString().split('T')[0]; // yyyy-mm-dd
   const hora = new Date().toTimeString().split(' ')[0]; // HH:mm:ss
 
+  console.log("si entro")
+
   if (!usuario) {
     // Si no hay usuario en localStorage, solo redirige
-    window.location.href = 'login.html';
+    window.location.href = 'Login.html';
     return;
   }
 
-  fetch('LoginHandler.aspx/CerrarSesion', {
+  // Llamada al backend Flask
+  fetch('http://localhost:5000/session/cerrar_sesion', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify({ usuario, fecha, hora })
+    body: JSON.stringify({ usuario, fecha, hora })  // Enviando datos como JSON
   })
   .then(response => response.json())
   .then(data => {
-    if (data.d === "ok") {
+    if (data.message === "ok") {
       console.log("Sesión cerrada en servidor.");
     } else {
-      console.warn("Servidor respondió:", data.d);
+      console.warn("Servidor respondió:", data.message);
     }
 
     // Limpiar sesión local y redirigir
     localStorage.removeItem('usuario');
-    window.location.href = 'login.html';
+    window.location.href = 'Login.html';
   })
   .catch(error => {
     console.error("Error al cerrar sesión en el servidor:", error);
     // Redirigir de todos modos
     localStorage.removeItem('usuario');
-    window.location.href = 'login.html';
+    window.location.href = 'Login.html';
   });
 }
 
