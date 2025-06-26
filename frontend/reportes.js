@@ -98,7 +98,7 @@ if (document.getElementById('formReporte')) {
     console.log(JSON.stringify({ reporte }));
 
     // Llamada al backend Flask para guardar el reporte
-    fetch("http://localhost:5000/reportes/guardar_reporte", {  // Cambiar URL según tu configuración de Flask
+    fetch("https://api.xinrin.uk/reportes/guardar_reporte", {  // Cambiar URL según tu configuración de Flask
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ reporte })  // Enviando el reporte como JSON
@@ -140,7 +140,7 @@ function mostrarTabla() {
   tbody.innerHTML = ''; // Limpiar la tabla
 
   // Llamada al backend Flask para obtener los reportes de hoy
-  fetch("http://localhost:5000/reportes/obtener_reportes_de_hoy", {  // Cambiar URL según tu configuración de Flask
+  fetch("https://api.xinrin.uk/reportes/obtener_reportes_de_hoy", {  // Cambiar URL según tu configuración de Flask
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ usuario })  // Enviamos el usuario como JSON

@@ -22,7 +22,7 @@ function mostrarHistorial() {
   const filtroHoraInicio = document.getElementById('filtroHoraInicio')?.value || '';
   const filtroHoraFin = document.getElementById('filtroHoraFin')?.value || '';
 
-  fetch("http://localhost:5000/reportes/obtener_historial", {
+  fetch("https://api.xinrin.uk/reportes/obtener_historial", {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
@@ -92,7 +92,7 @@ function cargarUsuarios() {
     return;
   }
 
-  fetch("http://localhost:5000/usuarios/obtener")
+  fetch("https://api.xinrin.uk/usuarios/obtener")
   .then(res => res.json())
   .then(data => {
     const usuarios = data.usuarios;

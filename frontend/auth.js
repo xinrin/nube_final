@@ -29,7 +29,7 @@ if (document.getElementById('loginForm')) {
 
 
     // Llamada a la API de Flask
-    fetch("http://localhost:5000/user/validar_usuario", {  // Cambiar URL según tu configuración de Flask
+    fetch("https://api.xinrin.uk/user/validar_usuario", {  // Cambiar URL según tu configuración de Flask
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -118,7 +118,7 @@ function CerrarSesion() {
   }
 
   // Llamada al backend Flask
-  fetch('http://localhost:5000/session/cerrar_sesion', {
+  fetch('https://api.xinrin.uk/session/cerrar_sesion', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
