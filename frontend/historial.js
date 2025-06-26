@@ -22,7 +22,7 @@ function mostrarHistorial() {
   const filtroHoraInicio = document.getElementById('filtroHoraInicio')?.value || '';
   const filtroHoraFin = document.getElementById('filtroHoraFin')?.value || '';
 
-  fetch("Reportes.aspx/ObtenerHistorial", {
+  fetch("http://localhost:5000/reportes/obtener_historial", {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
@@ -45,7 +45,7 @@ function mostrarHistorial() {
   .then(data => {
     tbody.innerHTML = '';
 
-    const reportes = data?.d;
+    const reportes = data?.reportes;
     if (!Array.isArray(reportes)) {
       tbody.innerHTML = `<tr><td colspan="11" class="text-center text-danger">Respuesta no válida del servidor.</td></tr>`;
       console.warn("Respuesta inesperada:", data);
@@ -66,7 +66,7 @@ function mostrarHistorial() {
           <td>${rep.estacion}</td>
           <td>${rep.tipo}</td>
           <td>${rep.idreporte}</td>
-          <td>${rep.comentario}</td>
+          <td>${rep.comentario || ''}</td>
           <td>${rep.urgencia}</td>
           <td>${rep.idsolucion}</td>
           <td>${rep.usuario}</td>
@@ -92,35 +92,28 @@ function cargarUsuarios() {
     return;
   }
 
-  fetch("Usuario.aspx/ObtenerUsuarios", {
-    method: "POST",
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({})
-  })
-    .then(res => res.json())
-    .then(data => {
-      const usuarios = data.d;
-      selectUsuario.innerHTML = '';
+  fetch("http://localhost:5000/usuarios/obtener")
+  .then(res => res.json())
+  .then(data => {
+    const usuarios = data.usuarios;
+    const select = document.getElementById('filtroUsuario');
+    select.innerHTML = '';
 
-      const allOption = document.createElement('option');
-      allOption.value = 'all';
-      allOption.textContent = '-- Todos --';
-      selectUsuario.appendChild(allOption);
+    const allOption = document.createElement('option');
+    allOption.value = 'all';
+    allOption.textContent = '-- Todos --';
+    select.appendChild(allOption);
 
-      if (Array.isArray(usuarios)) {
-        usuarios.forEach(usuario => {
-          const option = document.createElement('option');
-          option.value = usuario;
-          option.textContent = usuario;
-          selectUsuario.appendChild(option);
-        });
-      } else {
-        console.warn("Formato inesperado de usuarios:", data);
-      }
-    })
-    .catch(err => {
-      console.error('Error al cargar los usuarios:', err);
+    usuarios.forEach(usuario => {
+      const option = document.createElement('option');
+      option.value = usuario;
+      option.textContent = usuario;
+      select.appendChild(option);
     });
+  })
+  .catch(err => {
+    console.error("Error al obtener usuarios:", err);
+  });
 }
 
 // ====== INICIALIZACIÓN GENERAL ======

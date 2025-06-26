@@ -30,12 +30,8 @@ document.getElementById("descargarPDFA").addEventListener("click", () => {
       return
     }
   
-    // Obtener las fechas mínimas y máximas - CORREGIDO para evitar problemas de zona horaria
-    const fechas = reportesTabla.map((rep) => {
-      const [year, month, day] = rep.fecha.split('-').map(num => parseInt(num, 10))
-      return new Date(year, month - 1, day)
-    })
-    
+    const fechas = reportesTabla.map(rep => new Date(rep.fecha))
+
     const fechaMinima = new Date(Math.min(...fechas))
     const fechaMaxima = new Date(Math.max(...fechas))
   
