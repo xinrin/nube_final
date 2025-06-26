@@ -3,7 +3,7 @@ CREATE DATABASE reportes;
 use reportes;
 
 CREATE TABLE Reportes (
-  num_reporte int NOT NULL,
+  num_reporte int NOT NULL AUTO_INCREMENT,
   fecha date NULL,
   hora time NULL,
   canal varchar(100) NULL,
@@ -13,7 +13,8 @@ CREATE TABLE Reportes (
   urgencia varchar(20) NULL,
   solución varchar(80) NULL,
   usuario varchar(50) NULL,
-  status varchar(50) NULL
+  status varchar(50) NULL,
+  PRIMARY KEY (num_reporte)
 );
 
 
@@ -31,13 +32,14 @@ CREATE TABLE Encuestas (
 
 
 CREATE TABLE Sesiones (
-  id_sesion int NOT NULL,
+  id_sesion int NOT NULL AUTO_INCREMENT,
   usuario varchar(50) NOT NULL,
   fecha_inicio date NOT NULL,
   hora_inicio time NOT NULL,
   fecha_cierre date NULL,
   hora_cierre time NULL,
-  sesion_activa bit NOT NULL
+  sesion_activa bit NOT NULL,
+  PRIMARY KEY (id_sesion)
 );
 
 
@@ -57,3 +59,4 @@ VALUES
 
 
 select * from Usuarios;
+select * from Sesiones;
