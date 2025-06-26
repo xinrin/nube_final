@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (!nombreUsuario) {
       // Si no hay usuario en localStorage, redirigir al login
-      window.location.href = 'login.html';
+      window.location.href = 'Login.html';
     }
 
     // Mostrar el nombre del usuario en el dashboard
